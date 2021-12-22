@@ -6,8 +6,8 @@ const secondaryColor = Color(0xFF2f3f5e);
 const contentSpacing = 16.0;
 
 
-class ProfileScreen extends StatelessWidget {
-   const ProfileScreen({Key? key}) : super(key: key);
+class LoginScreen extends StatelessWidget {
+   const LoginScreen({Key? key}) : super(key: key);
 
   // ============= styles ===========
     static const double bodyPadding = 16.0;

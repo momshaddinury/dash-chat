@@ -5,17 +5,17 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:dash_chat_app/features/profile/profile_screen.dart';
+import 'package:dash_chat_app/features/login/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:dash_chat_app/main.dart';
 
 void main() {
-  group('Profile screen render test', (){
+  group('Login screen render test', (){
     testWidgets('Has Login Heading and button', (WidgetTester tester) async{
       await tester.pumpWidget(
         const MaterialApp(
-          home: ProfileScreen(),
+          home: LoginScreen(),
         ),
       );
       await tester.pump();
@@ -25,7 +25,7 @@ void main() {
     testWidgets('Has TextFields', (WidgetTester tester) async{
       await tester.pumpWidget(
         const MaterialApp(
-          home: ProfileScreen(),
+          home: LoginScreen(),
         ),
       );
       await tester.pump();

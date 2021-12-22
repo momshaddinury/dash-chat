@@ -1,4 +1,4 @@
-import 'package:dash_chat_app/features/profile/profile_screen.dart';
+import 'package:dash_chat_app/features/login/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const ProfileScreen(), // const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const LoginScreen(), // const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
