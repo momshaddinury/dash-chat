@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// ============= constants ===========
+/// constants
 const primaryColor = Color(0xFF0165ff);
 const secondaryColor = Color(0xFF2f3f5e);
 const contentSpacing = 16.0;
@@ -9,7 +9,7 @@ const contentSpacing = 16.0;
 class LoginScreen extends StatelessWidget {
    const LoginScreen({Key? key}) : super(key: key);
 
-  // ============= styles ===========
+  /// styles
     static const double bodyPadding = 16.0;
     static const TextStyle primaryHeadingTextStyle = TextStyle(
       fontSize: 30,
@@ -27,12 +27,12 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                // ============= A PICTURE ===========
+                /// A Picture
                 const SizedBox(height: 180, width: double.infinity,),
-                // ============= The Heading ===========
+                /// The Heading
                 const Text('Login', style: primaryHeadingTextStyle, textAlign: TextAlign.left,),
                 const SizedBox(height: 10.0,),
-                // ============= The Form ===========
+                /// The Form
                 const PrimaryInputTextField(
                   labelText: 'Email ID',
                   prefixIcon: Icons.alternate_email,
