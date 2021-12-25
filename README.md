@@ -3,4 +3,4 @@ A discord rip off. A Chat app built with Flutter, Riverpod and MVVM architecture
 
 ### Screens
 - Login Screen<br/>
-  ![login_screen](screenshots/login_screen.png)
+  ![login_screen](screenshots/login_screen_update.png)
