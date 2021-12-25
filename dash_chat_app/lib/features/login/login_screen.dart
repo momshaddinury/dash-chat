@@ -6,7 +6,7 @@ const kSecondaryColor = Color(0xFF37972e);
 const kGreyColor = Color(0xFF858585);
 const kBlackColor = Colors.black;
 const kWhiteColor = Colors.white;
-const contentSpacing = 16.0;
+const kContentSpacing = 16.0;
 
 
 class LoginScreen extends StatelessWidget {
@@ -24,58 +24,67 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(bodyPadding),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                /// A Picture
-                const SizedBox(height: 100, width: double.infinity,),
-                /// The Heading
-                const DoubleColorText(
-                  primaryText: 'Sign ',
-                  secondaryText: 'In',
-                  primaryColor: Colors.black,
-                  fontSize: 32,
-                ),
-                const SizedBox(height: 5.0,),
-                const Text('join the dashers', style: TextStyle(
-                  fontSize: 17.0,
-                  color: kGreyColor
-                ),),
-                const SizedBox(height: 30.0,),
-                /// The Form
-                const PrimaryInputTextField(
-                  labelText: 'Email ID',
-                  prefixIcon: Icons.alternate_email,
-                  keyboardType: TextInputType.emailAddress,
-                ),
-                const PrimaryInputTextField(
-                    labelText: 'Password',
-                    prefixIcon: Icons.lock_outline,
-                    obscureText: true,
-                    bottomSpace: contentSpacing*2,
-                ),
-                const SizedBox(height: 30.0,),
-                SizedBox(
-                  width: double.infinity,
-                  child: PrimaryActionButton(
-                    onPressed: (){},
-                    buttonText: 'Login',
+        child: LayoutBuilder(
+          builder: (context, constraint) {
+            return SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: constraint.maxHeight),
+                child: IntrinsicHeight(
+                  child: Padding(
+                    padding: const EdgeInsets.all(kContentSpacing),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: <Widget>[
+                        /// A Picture
+                        const Spacer(),
+                        /// The Heading
+                        const DoubleColorText(
+                          primaryText: 'Sign ',
+                          secondaryText: 'In',
+                          primaryColor: Colors.black,
+                          fontSize: 32,
+                        ),
+                        const SizedBox(height: 5.0,),
+                        const Text('join the dashers', style: TextStyle(
+                            fontSize: 17.0,
+                            color: kGreyColor
+                        ),),
+                        const Spacer(),
+                        /// The Form
+                        const PrimaryInputTextField(
+                          labelText: 'Email ID',
+                          prefixIcon: Icons.alternate_email,
+                          keyboardType: TextInputType.emailAddress,
+                        ),
+                        const PrimaryInputTextField(
+                          labelText: 'Password',
+                          prefixIcon: Icons.lock_outline,
+                          obscureText: true,
+                          bottomSpace: kContentSpacing*2,
+                        ),
+                        const Spacer(),
+                        SizedBox(
+                          width: double.infinity,
+                          child: PrimaryActionButton(
+                            onPressed: (){},
+                            buttonText: 'Login',
+                          ),
+                        ),
+                        const Spacer(),
+                        TextButton(
+                          onPressed: (){},
+                          child: const DoubleColorText(
+                              primaryText: "Don't have an account? ",
+                              secondaryText: "Create One"),
+                        ),
+                        const SizedBox(height: 10.0,)
+                      ],
+                    ),
                   ),
                 ),
-                const SizedBox(height: contentSpacing,),
-                TextButton(
-                  onPressed: (){},
-                  child: const DoubleColorText(
-                      primaryText: "Don't have an account? ",
-                      secondaryText: "Create One"),
-                ),
-                const SizedBox(height: 10.0,)
-              ],
-            ),
-          ),
+              ),
+            );
+          },
         ),
       ),
     );
@@ -128,7 +137,7 @@ class PrimaryInputTextField extends StatelessWidget{
     required this.prefixIcon,
     this.obscureText = false,
     this.keyboardType = TextInputType.text,
-    this.bottomSpace = contentSpacing,
+    this.bottomSpace = kContentSpacing,
   }) : super(key: key);
 
   @override
