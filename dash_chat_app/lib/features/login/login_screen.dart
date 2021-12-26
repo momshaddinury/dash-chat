@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 /// constants
-const primaryColor = Color(0xFF0165ff);
-const secondaryColor = Color(0xFF2f3f5e);
-const contentSpacing = 16.0;
+const kPrimaryColor = Color(0xFF414138);
+const kSecondaryColor = Color(0xFF37972e);
+const kGreyColor = Color(0xFF858585);
+const kBlackColor = Colors.black;
+const kWhiteColor = Colors.white;
+const kContentSpacing = 16.0;
 
 
 class LoginScreen extends StatelessWidget {
@@ -13,7 +16,7 @@ class LoginScreen extends StatelessWidget {
     static const double bodyPadding = 16.0;
     static const TextStyle primaryHeadingTextStyle = TextStyle(
       fontSize: 30,
-      color: secondaryColor,
+      color: kSecondaryColor,
       fontWeight: FontWeight.bold
     );
 
@@ -21,45 +24,102 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(bodyPadding),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                /// A Picture
-                const SizedBox(height: 180, width: double.infinity,),
-                /// The Heading
-                const Text('Login', style: primaryHeadingTextStyle, textAlign: TextAlign.left,),
-                const SizedBox(height: 10.0,),
-                /// The Form
-                const PrimaryInputTextField(
-                  labelText: 'Email ID',
-                  prefixIcon: Icons.alternate_email,
-                  keyboardType: TextInputType.emailAddress,
-                ),
-                PrimaryInputTextField(
-                    labelText: 'Password',
-                    prefixIcon: Icons.lock_outline,
-                    obscureText: true,
-                    suffixWidget: TextButton(onPressed: (){}, child: const Text('Forget?')),
-                    bottomSpace: contentSpacing*2,
-                ),
-                SizedBox(
-                  width: double.infinity,
-                  child: PrimaryActionButton(
-                    onPressed: (){},
-                    buttonText: 'Login',
+        child: LayoutBuilder(
+          builder: (context, constraint) {
+            return SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: constraint.maxHeight),
+                child: IntrinsicHeight(
+                  child: Padding(
+                    padding: const EdgeInsets.all(kContentSpacing),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: <Widget>[
+                        /// A Picture
+                        const Spacer(),
+                        /// The Heading
+                        const DoubleColorText(
+                          primaryText: 'Sign ',
+                          secondaryText: 'In',
+                          primaryColor: Colors.black,
+                          fontSize: 32,
+                        ),
+                        const SizedBox(height: 5.0,),
+                        const Text('join the dashers', style: TextStyle(
+                            fontSize: 17.0,
+                            color: kGreyColor
+                        ),),
+                        const Spacer(),
+                        /// The Form
+                        const PrimaryInputTextField(
+                          labelText: 'Email ID',
+                          prefixIcon: Icons.alternate_email,
+                          keyboardType: TextInputType.emailAddress,
+                        ),
+                        const PrimaryInputTextField(
+                          labelText: 'Password',
+                          prefixIcon: Icons.lock_outline,
+                          obscureText: true,
+                          bottomSpace: kContentSpacing*2,
+                        ),
+                        const Spacer(),
+                        SizedBox(
+                          width: double.infinity,
+                          child: PrimaryActionButton(
+                            onPressed: (){},
+                            buttonText: 'Login',
+                          ),
+                        ),
+                        const Spacer(),
+                        TextButton(
+                          onPressed: (){},
+                          child: const DoubleColorText(
+                              primaryText: "Don't have an account? ",
+                              secondaryText: "Create One"),
+                        ),
+                        const SizedBox(height: 10.0,)
+                      ],
+                    ),
                   ),
                 ),
-                const SizedBox(height: contentSpacing,),
-                TextButton(onPressed: (){}, child: Text('Or, sign up...', style: TextStyle(fontSize: 14.0, color: Colors.grey.shade500),))
-              ],
-            ),
-          ),
+              ),
+            );
+          },
         ),
       ),
     );
+  }
+}
+
+class DoubleColorText extends StatelessWidget{
+  final String primaryText;
+  final String secondaryText;
+  final Color primaryColor;
+  final Color secondaryColor;
+  final double fontSize;
+  final FontWeight fontWeight;
+
+  const DoubleColorText({
+    Key? key,
+    required this.primaryText,
+    required this.secondaryText,
+    this.primaryColor = kGreyColor,
+    this.secondaryColor = kSecondaryColor,
+    this.fontSize = 14.0,
+    this.fontWeight = FontWeight.normal,
+  }
+    ) : super(key: key);
+
+
+  @override
+  Widget build(BuildContext context) {
+    return RichText(text: TextSpan(
+      text: primaryText,
+      style: TextStyle(color: primaryColor, fontSize: fontSize, fontWeight: fontWeight),
+      children: [
+        TextSpan(text: secondaryText, style: TextStyle(color: secondaryColor)),
+      ]
+    ));
   }
 }
 
@@ -67,7 +127,6 @@ class PrimaryInputTextField extends StatelessWidget{
 
   final String labelText;
   final IconData prefixIcon;
-  final Widget? suffixWidget;
   final bool obscureText;
   final TextInputType keyboardType;
   final double bottomSpace;
@@ -76,28 +135,29 @@ class PrimaryInputTextField extends StatelessWidget{
     Key? key,
     required this.labelText,
     required this.prefixIcon,
-    this.suffixWidget,
     this.obscureText = false,
     this.keyboardType = TextInputType.text,
-    this.bottomSpace = contentSpacing,
+    this.bottomSpace = kContentSpacing,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(bottom: bottomSpace),
-      child: TextField(
-        obscureText: obscureText,
-        keyboardType: keyboardType,
-        decoration: InputDecoration(
-          prefixIconConstraints: const BoxConstraints(minWidth: 23, maxHeight: 23),
-          prefixIcon:  Padding(
-            padding: const EdgeInsets.only(right: 15),
-            child: Icon(prefixIcon),
-          ),
-          labelText: labelText,
-          suffixIcon: suffixWidget,
-        ),
+    return Card(
+      color: kWhiteColor,
+      elevation: 1,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0.0, 0.0, 18.0, 0.0),
+        child: TextField(
+            textAlignVertical: TextAlignVertical.center,
+            obscureText: false,
+            decoration: InputDecoration(
+              isDense: true,
+              border: InputBorder.none,
+              contentPadding: const EdgeInsets.only(bottom: -5.0),
+              prefixIcon: Icon(prefixIcon, color: kSecondaryColor,),
+              hintStyle: const TextStyle(color: kGreyColor, fontSize: 14, fontWeight: FontWeight.normal),
+              hintText: labelText,
+            )),
       ),
     );
   }
@@ -111,13 +171,13 @@ class PrimaryActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(5.0),
       child: ElevatedButton(
           onPressed: onPressed, child: Text(buttonText),
           style: ElevatedButton.styleFrom(
-        padding: const EdgeInsets.symmetric(vertical:23.0, horizontal: 10.0),
-        primary: primaryColor,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0))
+        padding: const EdgeInsets.symmetric(vertical:18.0, horizontal: 10.0),
+        primary: kPrimaryColor,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
       )),
     );
   }
