@@ -2,7 +2,6 @@ import 'package:dash_chat_app/features/profile/profile_model.dart';
 import 'package:dash_chat_app/features/profile/profile_view_model.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'widget/circuler_picture.dart';
