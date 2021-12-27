@@ -1,3 +1,4 @@
+import 'package:dash_chat_app/features/profile/screen/profile_screen.dart';
 import 'package:dash_chat_app/styles/k_assets.dart';
 import 'package:dash_chat_app/styles/k_colors.dart';
 import 'package:dash_chat_app/styles/k_text_style.dart';
@@ -53,7 +54,16 @@ class LoginScreen extends StatelessWidget {
                   obscureText: true,
                 ),
                 const SizedBox(height: 100),
-                KFilledButton(buttonText: 'Dash In', onPressed: () {}),
+                KFilledButton(
+                    buttonText: 'Dash In',
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ProfileScreen(),
+                        ),
+                      );
+                    }),
                 const SizedBox(height: 90),
                 Center(
                   child: TextButton(

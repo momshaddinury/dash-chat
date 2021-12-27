@@ -44,6 +44,7 @@ class KFilledButton extends _KButton {
     required String buttonText,
     required VoidCallback onPressed,
     Color buttonColor = KColors.accent,
+    double width = double.infinity,
   }) : super(
           child: Center(
             child: Text(
@@ -57,6 +58,7 @@ class KFilledButton extends _KButton {
           onPressed: onPressed,
           backgroundColor: buttonColor,
           height: 44,
+          width: width,
           borderRadius: BorderRadius.circular(6),
         );
 }
