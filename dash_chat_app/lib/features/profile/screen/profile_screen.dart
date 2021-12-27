@@ -1,4 +1,4 @@
-import 'package:dash_chat_app/features/login/login_screen.dart';
+import 'package:dash_chat_app/features/authentication/login_screen.dart';
 import 'package:dash_chat_app/styles/k_assets.dart';
 import 'package:dash_chat_app/styles/k_colors.dart';
 import 'package:dash_chat_app/widgets/k_button.dart';
@@ -43,7 +43,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   prefixIcon: KAssets.profile,
                   obscureText: false,
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 14),
                 const KTextField(
                   hinText: 'Email',
                   prefixIcon: KAssets.email,

@@ -1,4 +1,4 @@
-import 'package:dash_chat_app/features/login/login_screen.dart';
+import 'package:dash_chat_app/features/authentication/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
