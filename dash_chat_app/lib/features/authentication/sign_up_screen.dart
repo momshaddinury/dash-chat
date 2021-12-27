@@ -1,5 +1,5 @@
 import 'package:dash_chat_app/features/authentication/login_screen.dart';
-import 'package:dash_chat_app/features/profile/screen/profile_screen.dart';
+import 'package:dash_chat_app/features/profile/profile_screen.dart';
 import 'package:dash_chat_app/styles/k_assets.dart';
 import 'package:dash_chat_app/styles/k_colors.dart';
 import 'package:dash_chat_app/styles/k_text_style.dart';
