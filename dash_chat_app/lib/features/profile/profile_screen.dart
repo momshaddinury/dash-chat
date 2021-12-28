@@ -17,6 +17,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: KColors.white,
+        iconTheme: const IconThemeData(color: KColors.accent),
+      ),
       backgroundColor: KColors.white,
       body: SingleChildScrollView(
         child: SafeArea(
@@ -24,7 +29,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
             padding: const EdgeInsets.all(25),
             child: Column(
               children: [
-                const SizedBox(height: 30),
                 DottedBorder(
                   padding: const EdgeInsets.all(5),
                   borderType: BorderType.Circle,
@@ -56,12 +60,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       buttonText: 'Dash Out',
                       width: 143,
                       onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const LoginScreen(),
-                          ),
-                        );
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LoginScreen(),
+                            ),
+                            (route) => false);
                       }),
                 ),
                 const SizedBox(height: 20),

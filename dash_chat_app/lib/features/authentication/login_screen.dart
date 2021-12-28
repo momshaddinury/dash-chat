@@ -1,5 +1,5 @@
 import 'package:dash_chat_app/features/authentication/sign_up_screen.dart';
-import 'package:dash_chat_app/features/profile/profile_screen.dart';
+import 'package:dash_chat_app/features/chat/chat_screen.dart';
 import 'package:dash_chat_app/styles/k_assets.dart';
 import 'package:dash_chat_app/styles/k_colors.dart';
 import 'package:dash_chat_app/styles/k_text_style.dart';
@@ -19,6 +19,7 @@ class LoginScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(25),
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 const SizedBox(height: 50),
@@ -58,10 +59,10 @@ class LoginScreen extends StatelessWidget {
                 KFilledButton(
                     buttonText: 'Dash In',
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const ProfileScreen(),
+                          builder: (context) => const ChatScreen(),
                         ),
                       );
                     }),
@@ -69,7 +70,7 @@ class LoginScreen extends StatelessWidget {
                 Center(
                   child: TextButton(
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                           builder: (context) => const SignUpScreen(),
