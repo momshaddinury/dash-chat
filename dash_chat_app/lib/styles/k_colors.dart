@@ -10,5 +10,8 @@ class KColors {
   /// Chat
   static const chatAppBarBackground = Color(0xFFFBFDFB);
   static const chatScreenBackground = Color(0xFFE5E5E5);
+  static const chatSelfBubbleColor = Color(0xFFD6ECE3);
+  static const chatOthersBubbleColor = Color(0xFFFFFFFF);
+
 
 }
