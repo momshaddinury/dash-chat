@@ -44,13 +44,13 @@ class LoginScreen extends StatelessWidget {
                   style: KTextStyle.body1.copyWith(color: KColors.secondary),
                 ),
                 const SizedBox(height: 100),
-                const KTextField(
+                const KIconTextField(
                   hinText: 'Email',
                   prefixIcon: KAssets.email,
                   keyboardType: TextInputType.emailAddress,
                 ),
                 const SizedBox(height: 14),
-                const KTextField(
+                const KIconTextField(
                   hinText: 'Password',
                   prefixIcon: KAssets.password,
                   obscureText: true,

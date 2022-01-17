@@ -42,13 +42,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
                 const SizedBox(height: 70),
-                const KTextField(
+                const KIconTextField(
                   hinText: 'Full name',
                   prefixIcon: KAssets.profile,
                   obscureText: false,
                 ),
                 const SizedBox(height: 14),
-                const KTextField(
+                const KIconTextField(
                   hinText: 'Email',
                   prefixIcon: KAssets.email,
                   obscureText: false,
