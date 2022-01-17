@@ -1,6 +1,5 @@
 import 'package:dash_chat_app/features/profile/profile_screen.dart';
-import 'package:dash_chat_app/styles/k_colors.dart';
-import 'package:dash_chat_app/styles/k_text_style.dart';
+import 'package:dash_chat_app/styles/styles.dart';
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatelessWidget {
