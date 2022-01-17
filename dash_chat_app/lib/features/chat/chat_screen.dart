@@ -1,6 +1,5 @@
 import 'package:dash_chat_app/features/profile/profile_screen.dart';
-import 'package:dash_chat_app/styles/k_colors.dart';
-import 'package:dash_chat_app/styles/k_text_style.dart';
+import 'package:dash_chat_app/styles/styles.dart';
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -26,7 +25,10 @@ class ChatScreen extends StatelessWidget {
             padding: const EdgeInsets.only(right: 25.0),
             child: InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProfileScreen()));
               },
               child: const CircleAvatar(
                 child: Icon(Icons.person),

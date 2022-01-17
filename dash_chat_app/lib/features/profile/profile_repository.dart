@@ -1,7 +1,7 @@
 import 'package:dash_chat_app/features/profile/profile_model.dart';
 
 class ProfileRepository {
-  ProfileModel demoProfile = ProfileModel(
+  final demoProfile = const ProfileModel(
     id: 1,
     name: "Eleaus Hossain Evan",
     email: "exmaple@example.com",

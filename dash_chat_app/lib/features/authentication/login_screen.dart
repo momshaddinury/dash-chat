@@ -1,10 +1,7 @@
 import 'package:dash_chat_app/features/authentication/sign_up_screen.dart';
 import 'package:dash_chat_app/features/chat/chat_screen.dart';
-import 'package:dash_chat_app/styles/k_assets.dart';
-import 'package:dash_chat_app/styles/k_colors.dart';
-import 'package:dash_chat_app/styles/k_text_style.dart';
-import 'package:dash_chat_app/widgets/k_button.dart';
-import 'package:dash_chat_app/widgets/k_text_field.dart';
+import 'package:dash_chat_app/styles/styles.dart';
+import 'package:dash_chat_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {

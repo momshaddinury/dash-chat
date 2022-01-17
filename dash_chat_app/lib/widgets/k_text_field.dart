@@ -40,7 +40,8 @@ class KTextField extends StatelessWidget {
             decoration: InputDecoration(
               border: InputBorder.none,
               prefixIcon: Image.asset(prefixIcon),
-              hintStyle: KTextStyle.subtitle2.copyWith(color: KColors.secondary),
+              hintStyle:
+                  KTextStyle.subtitle2.copyWith(color: KColors.secondary),
               hintText: hinText,
             )),
       ),

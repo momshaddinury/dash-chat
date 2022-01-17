@@ -5,5 +5,11 @@ class ProfileModel {
   final String? email;
   final String? imageUrl;
 
-  ProfileModel({required this.id, required this.name, this.phone, this.email, this.imageUrl});
+  const ProfileModel({
+    required this.id,
+    required this.name,
+    this.phone,
+    this.email,
+    this.imageUrl,
+  });
 }
