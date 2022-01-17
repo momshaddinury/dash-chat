@@ -25,7 +25,10 @@ class ChatScreen extends StatelessWidget {
             padding: const EdgeInsets.only(right: 25.0),
             child: InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProfileScreen()));
               },
               child: const CircleAvatar(
                 child: Icon(Icons.person),

@@ -1,7 +1,6 @@
 import 'package:dash_chat_app/features/authentication/login_screen.dart';
 import 'package:dash_chat_app/styles/styles.dart';
 import 'package:dash_chat_app/widgets/widgets.dart';
-
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +35,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   child: Container(
                     height: 170,
                     width: 170,
-                    decoration: BoxDecoration(border: Border.all(style: BorderStyle.none), borderRadius: BorderRadius.circular(85)),
+                    decoration: BoxDecoration(
+                      border: Border.all(style: BorderStyle.none),
+                      borderRadius: BorderRadius.circular(85),
+                    ),
                     child: Image.asset(KAssets.upload),
                   ),
                 ),
